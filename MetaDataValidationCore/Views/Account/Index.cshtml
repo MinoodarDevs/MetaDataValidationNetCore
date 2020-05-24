@@ -1,0 +1,51 @@
+﻿@model MetaDataValidationCore.Models.Account
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row mt-3">
+    <div class="col-md-6 offset-md-3">
+        <h3 class="display-4 text-center">User Information</h3>
+        <hr />
+
+        <form method="post" asp-action="Save">
+            <div class="form-group" asp-validation-summary="ModelOnly"></div>
+
+            <div class="form-group">
+                <input asp-for="Username" class="form-control" placeholder="Username ..."/>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Password" class="form-control" placeholder="Password ..."/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Email" class="form-control" placeholder="Email ..."/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="WebSite" class="form-control" placeholder="WebSite ..."/>
+                <span asp-validation-for="WebSite" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input asp-for="Age" class="form-control" placeholder="Age ..."/>
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success btn-block"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+    {
+    @await Html.PartialAsync("_ValidationPartial")
+}
